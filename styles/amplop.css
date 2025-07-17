@@ -174,11 +174,22 @@
   
   /* Responsive */
   @media (max-width: 768px) {
-    .keluarga-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
+.keluarga-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .keluarga {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .amplop-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 1rem;
+  }
   
     .keluarga {
       width: 100%;
