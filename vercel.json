@@ -9,5 +9,5 @@
     "enabled": true
   },
   "ignoreCommand": "if [ \"$VERCEL_ENV\" != \"production\" ]; then exit 0; else exit 1; fi",
-  "buildCommand": "rm -rf .next && yarn build"
+  "buildCommand": "yarn build"
 }
