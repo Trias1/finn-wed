@@ -1,0 +1,18 @@
+{
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "cleanUrls": true,
+  "functions": {
+    "api/**/*.ts": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "github": {
+    "enabled": true
+  },
+  "ignoreCommand": "echo 'ignore cache'"
+}
