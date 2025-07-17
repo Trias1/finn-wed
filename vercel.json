@@ -13,6 +13,5 @@
   },
   "github": {
     "enabled": true
-  },
-  "ignoreCommand": "echo 'ignore cache'"
+  }
 }
