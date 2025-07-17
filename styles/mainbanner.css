@@ -1,0 +1,60 @@
+/* Gaya Umum */
+html {
+  scroll-behavior: smooth;
+}
+
+.main-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Gambar bulat di atas teks */
+.banner-image {
+  width: 300px; /* Ukuran gambar lebih kecil */
+  height: 300px;
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  object-fit: cover; /* Agar gambar menyesuaikan dan tidak terdistorsi */
+  border: 5px solid white; /* Menambahkan border putih di sekitar gambar */
+  margin-bottom: 20px; /* Jarak antara gambar dan teks */
+}
+
+.card-main {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.pre-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.text-invite {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .text-invite {
+    font-size: 1rem;
+  }
+}

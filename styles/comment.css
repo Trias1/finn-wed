@@ -1,0 +1,144 @@
+/* Style untuk desktop */
+.card-bodys {
+  background: #fff;
+  color: #333;
+  border-radius: 0.7rem;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: justify;
+}
+
+.card-bodys .btn-kirim-undangan {
+  padding: 12px 24px;
+    border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  border: none;
+  background: #C38D7A;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  font-size: 14px;
+}
+
+.card-bodys .btn-kirim-undangan:hover {
+  background: white;
+  color: #C38D7A;
+}
+
+
+.ucapan h1 {
+  font-size: 1.5rem;
+  
+  color: #333;
+}
+
+.ucapan h2 {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+/* booklist */
+
+.list-ucapan {
+  background: #fff;
+  padding: 12px;
+  border-radius: 0.5rem;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+}
+
+.list-ucapan h5 {
+  font-weight: bold;
+  color: #444;
+  font-size: 1rem;
+}
+
+.list-ucapan p {
+  color: #666;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+
+/* Style untuk perangkat mobile */
+@media (max-width: 768px) {
+  .containerssa{
+    margin-top: -50px;
+  }
+  .card-bodys {
+    padding: 15px; /* Mengurangi padding untuk perangkat kecil */
+  }
+
+  .card-bodys .btn-kirim-undangan {
+    font-size: 13px; /* Menyesuaikan ukuran font tombol */
+    padding: 10px 20px; /* Mengurangi padding */
+  }
+
+  .btn-refresh-undangan {
+    font-size: 11px; /* Menyesuaikan ukuran font tombol */
+    padding: 8px 16px; /* Mengurangi padding */
+  }
+
+  .ucapan h1 {
+    font-size: 1.2rem; /* Menyesuaikan ukuran font heading */
+  }
+
+  .ucapan h2 {
+    font-size: 0.85rem; /* Menyesuaikan ukuran font subheading */
+  }
+
+  .list-ucapan h5 {
+    font-size: 0.9rem; /* Menyesuaikan ukuran font judul ucapan */
+  }
+
+  .list-ucapan p {
+    font-size: 0.8rem; /* Menyesuaikan ukuran font teks ucapan */
+  }
+
+  .list-ucapan {
+    padding: 10px; /* Mengurangi padding untuk perangkat kecil */
+  }
+}
+
+/* Style untuk perangkat kecil (misalnya, ponsel dengan lebar kurang dari 480px) */
+@media (max-width: 480px) {
+  .containerssa{
+    margin-top: -20px;
+  }
+  .card-bodys {
+    padding: 10px; /* Menyesuaikan padding lebih kecil */
+  }
+
+  .card-bodys .btn-kirim-undangan {
+    font-size: 12px; /* Menyesuaikan ukuran font tombol */
+    padding: 8px 16px; /* Mengurangi padding */
+  }
+
+  .btn-refresh-undangan {
+    font-size: 10px; /* Menyesuaikan ukuran font tombol */
+    padding: 6px 12px; /* Mengurangi padding */
+  }
+
+  .ucapan h1 {
+    font-size: 1rem; /* Menyesuaikan ukuran font heading */
+  }
+
+  .ucapan h2 {
+    font-size: 0.75rem; /* Menyesuaikan ukuran font subheading */
+  }
+
+  .list-ucapan h5 {
+    font-size: 0.85rem; /* Menyesuaikan ukuran font judul ucapan */
+  }
+
+  .list-ucapan p {
+    font-size: 0.75rem; /* Menyesuaikan ukuran font teks ucapan */
+  }
+
+  .list-ucapan {
+    padding: 8px; /* Mengurangi padding untuk perangkat kecil */
+  }
+}

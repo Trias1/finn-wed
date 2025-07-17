@@ -1,0 +1,21 @@
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Responsive untuk perangkat dengan lebar maksimal 480px */
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.5rem;
+    }
+    .content h2 {
+      font-size: 1.2rem;
+    }
+    .content p {
+      font-size: 0.9rem;
+    }
+    .icon {
+      font-size: 1.5rem;
+    }
+  }

@@ -1,0 +1,62 @@
+.nameUndangan {
+  font-family: "Playball", cursive;
+  text-align: center; /* Memastikan nama ditampilkan di tengah */
+}
+
+.desc1 {
+  font-family: "Nunito", sans-serif;
+  text-align: center; /* Memastikan deskripsi ditampilkan di tengah */
+}
+
+.btn-undangan {
+  border: none;
+}
+
+.descButton {
+  background-color: white;
+  padding: 0.5rem 1rem; /* Menambahkan padding agar tombol lebih nyaman di klik */
+  margin: 0 auto; /* Memastikan tombol berada di tengah */
+}
+
+.modal-content {
+  background-color: #C38D7A;
+  border-radius: 15px; /* Menambahkan sudut melengkung pada modal */
+  max-width: 100%; /* Membatasi lebar maksimum modal */
+  max-height: 100%; /* Membatasi tinggi maksimum modal */
+  overflow-y: auto; /* Menambahkan scroll jika konten terlalu tinggi */
+  margin: auto; /* Memastikan modal berada di tengah */
+}
+
+.img-undangan {
+  width: 500px; /* Sesuaikan dengan ukuran yang diinginkan */
+  height: 500px; /* Sesuaikan dengan ukuran yang diinginkan */
+  overflow: hidden; /* Menyembunyikan bagian gambar yang melebihi batas */
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  margin: 0 auto; /* Memastikan gambar berada di tengah */
+}
+
+.img-undangan img {
+  width: 100%; /* Memastikan gambar mengisi elemen dengan baik */
+  height: auto; /* Memastikan tinggi proporsional */
+  object-fit: cover; /* Memastikan gambar tetap terjaga proporsinya */
+}
+
+
+@media screen and (max-width: 1024px) {
+  .img-undangan {
+    width: 250px; 
+    height: 250px; 
+    overflow: hidden; 
+    border-radius: 10%; 
+    margin: 0 auto; 
+  }
+}
+@media screen and (max-width: 600px) {
+  .img-undangan {
+    width: 250px; 
+    height: 250px; 
+    overflow: hidden; 
+    border-radius: 10%; 
+    margin: 0 auto; 
+  }
+}
