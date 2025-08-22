@@ -20,19 +20,18 @@ export default function CalonPasangan() {
 
           <div className="pengantin">
             <Image
-              src="/img/laks.png"
-              className="rounded-circle"
+              src="/img/prems.png"
+              className="rounded-circle "
               layout="responsive"
               width={50}
               height={50}
-              alt="Trias Zaen Mutaqin"
+              alt="Zulfa Syafiyah"
             />
-            <p className="nama-pengantin">Trias Zaen Mutaqin</p>
-            <p className="orangtua">Putra dari Pak Asep Sudrajat & Ibu Upi</p>
-            <a
-              href="https://www.instagram.com/tzm_12/"
-              className="sosmed"
-            >
+            <p className="nama-pengantin">Zulfa Syafiyah Pratiwi</p>
+            <p className="orangtua">
+              Putri dari Pak Cartab & Ibu Dewi Komalasari
+            </p>
+            <a href="https://www.instagram.com/zulfasyapr/" className="sosmed">
               <FiInstagram />
             </a>
           </div>
@@ -43,16 +42,16 @@ export default function CalonPasangan() {
 
           <div className="pengantin">
             <Image
-              src="/img/prems.png"
-              className="rounded-circle "
+              src="/img/laks.png"
+              className="rounded-circle"
               layout="responsive"
               width={50}
               height={50}
-              alt="Zulfa Syafiyah"
+              alt="Trias Zaen Mutaqin"
             />
-            <p className="nama-pengantin">Zulfa Syafiyah Pratiwi</p>
-            <p className="orangtua">Putri dari Pak Cartab & Ibu Dewi Komalasari</p>
-            <a href="https://www.instagram.com/zulfasyapr/" className="sosmed">
+            <p className="nama-pengantin">Trias Zaen Mutaqin</p>
+            <p className="orangtua">Putra dari Pak Asep Sudrajat & Ibu Upi</p>
+            <a href="https://www.instagram.com/tzm_12/" className="sosmed">
               <FiInstagram />
             </a>
           </div>

@@ -80,27 +80,26 @@ export default function Amplop() {
                 src="/img/bck.png"
                 width={300}
                 height={300}
-                alt="Trias & Zulfa"
+                alt="Zulfa & Trias"
                 className="img-rounded"
               />
             </div>
           </div>
 
           <div className="nama-pasangan">
-            <p>trias & zulfa</p>
+            <p>Zulfa & Trias</p>
           </div>
 
           <div className="keluarga-container">
             <div className="keluarga">
-              <h3>Keluarga Besar Pria</h3>
-              <p>Pak Asep Sudrajat & Ibu Upi</p>
-              <p>Keluarga Besar Pak Sudrajat</p>
-            </div>
-
-            <div className="keluarga">
               <h3>Keluarga Besar Wanita</h3>
               <p>Pak Cartab & Ibu Dewi Komalasari</p>
               <p>Keluarga Besar Pak Cartab</p>
+            </div>
+            <div className="keluarga">
+              <h3>Keluarga Besar Pria</h3>
+              <p>Pak Asep Sudrajat & Ibu Upi</p>
+              <p>Keluarga Besar Pak Sudrajat</p>
             </div>
           </div>
 
@@ -144,9 +143,7 @@ export default function Amplop() {
                     height={200}
                   />
                   <p className="mt-3 mb-0 fw-bold">Rekening {item.bank}</p>
-                  <p>
-                    {item.rekening}
-                  </p>
+                  <p>{item.rekening}</p>
                   <p> {item.atasNama}</p>
                 </div>
               ))}

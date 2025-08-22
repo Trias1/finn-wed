@@ -50,7 +50,7 @@ export default function mainBanner() {
                     className="banner-image"
                   />
                   <h3 className="pre-title ">The Wedding of</h3>
-                  <h1 className="titles">Trias & Zulfa</h1>
+                  <h1 className="titles">Zulfa & Trias</h1>
                   <h4 className="text-invite ">
                     We invite you to celebrate our wedding
                     <br />

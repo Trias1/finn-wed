@@ -6,8 +6,8 @@ export default function Footer() {
     <footer>
       <div className="container center-text">
         <div className="footer__copyright">
-        <a href="#mainbanner" className="name_footer">
-          <h4>&copy; Trias & Zulfa </h4>
+          <a href="#mainbanner" className="name_footer">
+            <h4>&copy; Zulfa & Trias</h4>
           </a>
         </div>
       </div>

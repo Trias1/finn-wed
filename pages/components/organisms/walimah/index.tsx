@@ -19,7 +19,7 @@ const AdabWalimah = () => {
               layout="responsive"
               width={10}
               height={10}
-              alt="Trias & Zulfa"
+              alt="Zulfa & Trias"
             />
           </div>
 
