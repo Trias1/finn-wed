@@ -21,7 +21,7 @@ export default function LoginPage() {
 
   return (
     <div className="bg-gradient-to-br from-purple-700 min-h-screen flex flex-col justify-center items-center">
-      <div className="bg-purple-700 min-h-screen flex flex-col justify-center items-center">
+      {/* <div className="bg-purple-700 min-h-screen flex flex-col justify-center items-center"> */}
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
           <h1 className="text-4xl font-bold text-center text-purple-700 mb-8">
             Welcome to My Website
@@ -84,6 +84,6 @@ export default function LoginPage() {
           </form>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
