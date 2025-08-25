@@ -47,7 +47,7 @@ export default function ImportExcel() {
 
   return (
     <div className="p-4 border rounded">
-      <h2 className="text-lg font-bold mb-2">📥 Import Excel Tamu</h2>
+      <h2 className="text-lg text-gray-700 font-bold mb-2">📥 Import Excel Tamu</h2>
       <input
         type="file"
         accept=".xlsx, .xls, .csv"

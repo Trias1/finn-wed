@@ -145,16 +145,19 @@ export default function ListUndangan() {
 
   return (
     <AdminLayout>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
         <h1 className="text-2xl font-bold">📋 Daftar Undangan</h1>
-        <button
-          onClick={() => setShowAddModal(true)}
-          className="bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2 hover:bg-blue-700"
-        >
-          <FaPlus /> Tambah
-        </button>
-        {/* ⬅️ tombol import */}
-        <ImportExcel />
+
+        <div className="flex flex-wrap gap-2">
+          <button
+            onClick={() => setShowAddModal(true)}
+            className="bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2 hover:bg-blue-700"
+          >
+            <FaPlus /> Tambah
+          </button>
+          {/* ⬅️ tombol import */}
+          <ImportExcel />
+        </div>
       </div>
 
       {/* 🔍 Search + Filter */}
@@ -258,7 +261,7 @@ export default function ListUndangan() {
 
             <button
               onClick={() => handleShareWA(t)}
-              className="mt-4 bg-green-600 text-white py-2 rounded flex items-center justify-center gap-2 hover:bg-green-700"
+              className="mt-4 bg-green-600 text-white py-2 rounded flex items-center justify-center gap-2 hover:bg-green-700 w-full"
             >
               <FaWhatsapp /> Share via WhatsApp
             </button>
@@ -293,8 +296,8 @@ export default function ListUndangan() {
 
       {/* Modal Tambah */}
       {showAddModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-96">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
             <h2 className="text-xl font-bold mb-4">Tambah Undangan</h2>
 
             <input
@@ -349,8 +352,8 @@ export default function ListUndangan() {
 
       {/* Modal Edit */}
       {showEditModal && editData && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-96">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
             <h2 className="text-xl font-bold mb-4">Edit Undangan</h2>
 
             <input
