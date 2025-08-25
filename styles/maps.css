@@ -39,7 +39,7 @@
   .btn-maps {
     display: inline-block;
     padding: 12px 24px; /* Menambah padding untuk tombol */
-    background-color: #007bff;
+    background-color: #C38D7A;
     color: white;
     text-decoration: none;
     border-radius: 10px;
@@ -53,6 +53,6 @@
   }
   
   .btn-maps:hover {
-    background-color: #0056b3;
+    background-color: #C38D7A;
   }
   
