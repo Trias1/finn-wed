@@ -2,9 +2,9 @@ import { saveAs } from "file-saver";
 import { Document, Packer, Paragraph, TextRun } from "docx";
 
 type Guest = {
-  id: string;
+  id?: string;
   name: string;
-  description: string;
+  description?: string;
 };
 
 export const exportAllUndanganToWord = async (
@@ -14,7 +14,7 @@ export const exportAllUndanganToWord = async (
   const paragraphs: Paragraph[] = [];
 
   guests.forEach((guest, idx) => {
-    const teks = generateTeks(guest.name);
+    const teks = generateTeks(guest.name || "Tamu");
     const lines = teks.split("\n");
 
     lines.forEach((line) => {
@@ -37,5 +37,5 @@ export const exportAllUndanganToWord = async (
   });
 
   const blob = await Packer.toBlob(doc);
-  saveAs(blob, "Undangan-Tamu.docx");
+  saveAs(blob, `Undangan-Tamu-${Date.now()}.docx`);
 };

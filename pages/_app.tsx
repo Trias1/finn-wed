@@ -1,5 +1,4 @@
 // pages/_app.tsx
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Script from "next/script";
 
@@ -16,6 +15,8 @@ import "../styles/mainbanner.css";
 import "../styles/lovestory.css";
 import "../styles/adapwalimah.css";
 import "../styles/amplop.css";
+import "../styles/globals.css";
+import { Toaster } from "react-hot-toast";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -28,6 +29,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         strategy="afterInteractive"
       />
       <Component {...pageProps} />
+      <Toaster position="top-right" reverseOrder={false} />
     </>
   );
 }

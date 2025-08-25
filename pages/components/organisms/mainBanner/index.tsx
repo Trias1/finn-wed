@@ -1,6 +1,7 @@
+"use client";
 import React, { useState, useEffect } from "react";
 
-export default function mainBanner() {
+export default function MainBanner() {
   const [isExpired, setIsExpired] = useState(false);
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
@@ -9,91 +10,70 @@ export default function mainBanner() {
 
   useEffect(() => {
     const countDownDate = new Date("September 28, 2025 11:00:00").getTime();
+
     const x = setInterval(() => {
       const now = new Date().getTime();
       const distance = countDownDate - now;
 
-      const day = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hour = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minute = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const second = Math.floor((distance % (1000 * 60)) / 1000);
-
-      setDays(day);
-      setHours(hour);
-      setMinutes(minute);
-      setSeconds(second);
-
       if (distance < 0) {
         clearInterval(x);
         setIsExpired(true);
+        return;
       }
+
+      setDays(Math.floor(distance / (1000 * 60 * 60 * 24)));
+      setHours(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+      setMinutes(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+      setSeconds(Math.floor((distance % (1000 * 60)) / 1000));
     }, 1000);
 
-    return () => {
-      clearInterval(x);
-    };
-  }, [days, hours, minutes, seconds]);
+    return () => clearInterval(x);
+  }, []);
 
   return (
     <div className="containers" id="mainbanner">
-      <div className="main-banner-container">
-        <div className="main-banner">
-          <div className="display-table center-text">
-            <div className="display-table-cell">
-              <div className="card-main">
-                <div className="slider-content">
-                  <img
-                    src="/img/bck.png"
-                    alt="Wedding Image"
-                    className="banner-image"
-                  />
-                  <h3 className="pre-title ">The Wedding of</h3>
-                  <h1 className="titles">Zulfa & Trias</h1>
-                  <h4 className="text-invite ">
-                    We invite you to celebrate our wedding
-                    <br />
-                    <span className="mt-1">Sabtu, 28 September 2025</span>
-                  </h4>
-                  <div className="col-sm-12">
-                    <div className="heading">
-                      <h3 className="titles mt-1">Jangan Lupa!</h3>
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <div className="remaining-time">
-                      {isExpired ? (
-                        <div> Yay... The day has arrived!</div>
-                      ) : (
-                        <div id="clock">
-                          <div className="time-secs d-inline-block">
-                            {" "}
-                            Days
-                            <span className="title">{days}</span>
-                          </div>
-                          <div className="time-secs d-inline-block">
-                            {" "}
-                            Hours
-                            <span className="title">{hours}</span>
-                          </div>
-                          <div className="time-secs d-inline-block">
-                            {" "}
-                            Minutes
-                            <span className="title">{minutes}</span>
-                          </div>
-                          <div className="time-secs d-inline-block">
-                            {" "}
-                            Seconds
-                            <span className="title">{seconds}</span>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+      <div className="main-banner">
+        <div className="card-main">
+          <img
+            src="/img/bck.png"
+            alt="Wedding Image"
+            className="banner-image"
+          />
+          <h3 className="pre-title">The Wedding of</h3>
+          <h1 className="titles">Zulfa & Trias</h1>
+          <h4 className="text-invite">
+            We invite you to celebrate our wedding
+            <br />
+            <span className="mt-1">Sabtu, 28 September 2025</span>
+          </h4>
+
+          <div className="heading">
+            <h3 className="titles mt-1">Jangan Lupa!</h3>
+          </div>
+
+          <div className="remaining-time mt-4">
+            {isExpired ? (
+              <div>🎉 Yay... The day has arrived!</div>
+            ) : (
+              <div id="clock" className="flex gap-6 justify-center">
+                <div className="time-secs">
+                  <span className="time-number">{days}</span>
+                  <div>Days</div>
+                </div>
+                <div className="time-secs">
+                  <span className="time-number">{hours}</span>
+                  <div>Hours</div>
+                </div>
+                <div className="time-secs">
+                  <span className="time-number">{minutes}</span>
+                  <div>Minutes</div>
+                </div>
+                <div className="time-secs">
+                  <span className="time-number">{seconds}</span>
+                  <div>Seconds</div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
