@@ -1,18 +1,8 @@
-"use client";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Script from "next/script";
 import { FaBookOpen } from "react-icons/fa";
-import {
-  collection,
-  query,
-  where,
-  getDocs,
-} from "firebase/firestore";
-import { db } from "../../../services/firebase-config";
-
-// Komponen lain
 import Navbar from "../../components/organisms/Navbar";
 import MainBanner from "../../components/organisms/mainBanner";
 import CalonPasangan from "../../components/organisms/calonPasangan";
@@ -25,44 +15,46 @@ import LoveStory from "../../components/organisms/lovestory";
 import AdabWalimah from "../../components/organisms/walimah";
 import Amplop from "../../components/organisms/amplop";
 
+import { db } from "../../../services/firebase-config";
+import { collection, query, where, getDocs } from "firebase/firestore";
+
 export default function UndanganUserPage() {
   const router = useRouter();
-  const { pasangan, id: rawId } = router.query; // ✅ ambil keduanya
-
-  const [userData, setUserData] = useState<any | null>(null);
-  const [notFound, setNotFound] = useState(false);
+  const [bookId, setBookId] = useState("");
+  const [onNewComment] = useState("");
+  const { id: rawId } = router.query;
   const modalRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [userData, setUserData] = useState<any | null>(null);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     if (!router.isReady) return;
 
-    // Buat slug yang sama kayak waktu disimpan
-    const formattedId = typeof rawId === "string" ? rawId.toLowerCase().trim() : "";
+    const formattedId =
+      typeof rawId === "string" ? rawId.toLowerCase().replace(/\s+/g, "-") : "";
     if (!formattedId) return;
-
-    // Kalau slug tamu unik global → cukup pakai `formattedId`
-    // Kalau slug tamu unik per pasangan → pakai kombinasi pasangan/id
-    // const formattedSlug = `${pasangan}/${formattedId}`;
 
     const fetchTamu = async () => {
       try {
         const q = query(
           collection(db, "tamu"),
-          where("slug", "==", formattedId) // 🔧 kalau slug unik per pasangan, ganti ke formattedSlug
+          where("slug", "==", formattedId)
         );
         const snapshot = await getDocs(q);
+
+        console.log("Cari slug:", formattedId, "Jumlah hasil:", snapshot.size);
 
         if (!snapshot.empty) {
           const data = snapshot.docs[0].data();
 
+          // fallback kalau name / description belum ada
           setUserData({
             ...data,
-            name: data.name || "Tamu Undangan",
+            name: data.name || data.nama,
             description:
               data.description ||
               "Kami dengan senang hati mengundang Anda untuk merayakan momen bahagia ini bersama kami.",
-            slug: data.slug,
           });
 
           // auto show modal
@@ -84,14 +76,16 @@ export default function UndanganUserPage() {
     };
 
     fetchTamu();
-  }, [router.isReady, pasangan, rawId]);
+  }, [router.isReady, rawId]);
 
+  // Klik tombol "Buka Undangan"
   const handleOpenInvitation = () => {
     if (audioRef.current) {
       audioRef.current
         .play()
         .catch((err) => console.warn("Autoplay blocked:", err));
     }
+
     if (window.bootstrap && modalRef.current) {
       const modalInstance = (window as any).bootstrap.Modal.getInstance(
         modalRef.current
@@ -104,7 +98,10 @@ export default function UndanganUserPage() {
     return (
       <div className="text-center mt-5 p-4">
         <h1>Undangan Tidak Ditemukan</h1>
-        <p>Silakan cek kembali URL atau hubungi admin.</p>
+        <p>
+          Silakan periksa kembali URL atau hubungi admin untuk info lebih
+          lanjut.
+        </p>
       </div>
     );
   }
@@ -113,19 +110,21 @@ export default function UndanganUserPage() {
 
   return (
     <>
-      {/* Musik */}
+      {/* Musik latar */}
       <audio ref={audioRef} loop>
         <source
           src="/audio/WeddingNasheedMuhammadAlMuqitLyricsArabic.mp3"
           type="audio/mp3"
         />
+        Browser Anda tidak mendukung elemen audio.
       </audio>
 
-      {/* Modal Intro */}
+      {/* Modal Undangan */}
       <div
         className="modal fade"
         id="exampleModal"
         tabIndex={-1}
+        aria-labelledby="exampleModalLabel"
         aria-hidden="true"
         ref={modalRef}
       >
@@ -138,8 +137,8 @@ export default function UndanganUserPage() {
               <div className="img-undangan mb-4">
                 <Image
                   src="/img/bck.png"
-                  width={600}
-                  height={600}
+                  width={1000}
+                  height={1000}
                   alt="Foto Pengantin"
                 />
               </div>
@@ -164,7 +163,7 @@ export default function UndanganUserPage() {
         </div>
       </div>
 
-      {/* Isi Undangan */}
+      {/* Komponen Undangan */}
       <Navbar />
       <MainBanner />
       <CalonPasangan />
@@ -173,11 +172,11 @@ export default function UndanganUserPage() {
       <Maps />
       <AdabWalimah />
       <Amplop />
-      <AddBook id={userData.slug} setBookId={() => {}} onNewComment="" />
+      <AddBook id={bookId} setBookId={setBookId} onNewComment={onNewComment} />
       <BooksList />
       <Footer />
 
-      {/* Bootstrap JS */}
+      {/* Bootstrap Script */}
       <Script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         strategy="beforeInteractive"

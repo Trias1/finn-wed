@@ -14,6 +14,13 @@ import {
 const bookCollectionRef = collection(db, "wedd");
 
 class BookDataService {
+  // Tambahkan createdAt saat menambahkan data baru
+  addBooks = (newBook) => {
+    return addDoc(bookCollectionRef, {
+      ...newBook,
+      createdAt: Timestamp.now(), // Simpan waktu saat data dibuat
+    });
+  };
   // Update book
   updateBook(id, updatedBook) {
     const bookDoc = doc(db, "wedd", id);

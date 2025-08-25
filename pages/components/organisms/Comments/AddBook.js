@@ -10,11 +10,13 @@ export default function AddBooks({ id, setBookId, onNewComment }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage("");
-    if (title === "" || author === "") {
-      setMessage({ error: true, msg: "All fields are mandatory!" });
+    setMessage({ error: false, msg: "" });
+
+    if (title.trim() === "" || author.trim() === "") {
+      setMessage({ error: true, msg: "Semua field wajib diisi!" });
       return;
     }
+
     const newBook = {
       title,
       author,
@@ -22,7 +24,7 @@ export default function AddBooks({ id, setBookId, onNewComment }) {
     };
 
     try {
-      if (id !== undefined && id !== "") {
+      if (id) {
         await BookDataService.updateBook(id, newBook);
         setBookId("");
         setMessage({ error: false, msg: "Updated successfully!" });
@@ -31,16 +33,16 @@ export default function AddBooks({ id, setBookId, onNewComment }) {
         setMessage({ error: false, msg: "Berhasil mengirimkan ucapan!" });
       }
 
-      // Panggil callback jika tersedia
-      if (onNewComment) {
-        onNewComment();
-      }
+      if (onNewComment) onNewComment();
+
+      // Reset form
+      setTitle("");
+      setAuthor("");
+      setStatus("Hadir");
     } catch (err) {
+      console.error("Error tambah book:", err);
       setMessage({ error: true, msg: err.message });
     }
-
-    setTitle("");
-    setAuthor("");
   };
 
   return (
