@@ -1,4 +1,4 @@
-footer{
+footer {
     background: var(--color-primary);
     padding: 3rem 0;
     text-align: center;
@@ -56,18 +56,29 @@ footer a {
 /* ======= media queries (Small Devices) ==== */
 
 @media (max-width: 600px) {
-    footer{
+    footer {
         max-width: 700px;
         background: var(--color-primary);
         text-align: center;
         font-size: 0.9rem;
         margin-top: 7rem;
     }
+
     .footer__logo {
         font-size: 2rem;
         font-weight: 600;
         margin-bottom: 2rem;
         display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    footer .copyright {
+        font-size: 0.8rem;
+    }
+
+    footer .newsletter .email-area {
+        width: 90%;
     }
 }
 

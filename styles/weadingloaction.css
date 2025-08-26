@@ -64,7 +64,9 @@
   flex-wrap: wrap;
 }
 
-.day, .month, .year {
+.day,
+.month,
+.year {
   font-size: 1rem;
   text-transform: uppercase;
   color: #34495e;
@@ -120,19 +122,19 @@
 /* Responsive */
 @media (max-width: 768px) {
   .card-duo {
-    flex-wrap: nowrap;      /* ⛔ Jangan wrap, tetap horizontal */
-    gap: 0.5rem;             /* Jarak antar card dikurangi */
+    flex-wrap: nowrap;
+    /* ⛔ Jangan wrap, tetap horizontal */
+    gap: 0.5rem;
+    /* Jarak antar card dikurangi */
     justify-content: space-between;
   }
 
   .card-wed {
-    flex: 1 1 45%;           /* Lebarnya cukup setengah */
+    flex: 1 1 45%;
+    /* Lebarnya cukup setengah */
     padding: 1rem;
-    font-size: 0.85rem;      /* Semua isi dalam card mengecil */
-  }
-
-  .save-the-date span {
-    font-size: 1rem;
+    font-size: 0.85rem;
+    /* Semua isi dalam card mengecil */
   }
 
   .date {
@@ -151,4 +153,19 @@
     font-size: 1rem;
   }
 
+}
+
+@media (max-width: 480px) {
+
+  .date {
+    font-size: 1.6rem;
+  }
+
+  .save-the-date span {
+    font-size: 0.9rem;
+  }
+
+  .event-detail h4 {
+    font-size: 0.8rem;
+  }
 }

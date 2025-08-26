@@ -1,19 +1,19 @@
 .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  
-  .card-amp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.card-amp {
   flex: 1 1 300px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   text-align: center;
-  }
+}
 
 .psgns {
   display: flex;
@@ -35,49 +35,50 @@
   height: 100%;
   object-fit: cover;
 }
-  /* Teks Undangan */
-  .text-undangan {
-    margin-bottom: 1.5rem;
-  }
-  
-  .deskripsi {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .kami-yang-berbahagia {
-    font-weight: bold;
-    margin-top: 0.5rem;
-  }
-  
-  /* Foto Pasangan */
-  .foto-pasangan {
-    margin-bottom: 1rem;
-  }
-  
-  .pasangan-img {
-    border-radius: 50%;
-    border: 3px solid;
-  }
-  
-  /* Nama pasangan */
-  .nama-pasangan {
-    font-size: 1.5rem;
-    font-weight: bold;
-    /* color: #d4af37; */
-    margin-top: -10px;
-    text-transform: capitalize;
-  }
-  
-  /* Keluarga Container */
-  .keluarga-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  
-  .keluarga {
+
+/* Teks Undangan */
+.text-undangan {
+  margin-bottom: 1.5rem;
+}
+
+.deskripsi {
+  font-size: 1rem;
+  color: #555;
+}
+
+.kami-yang-berbahagia {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Foto Pasangan */
+.foto-pasangan {
+  margin-bottom: 1rem;
+}
+
+.pasangan-img {
+  border-radius: 50%;
+  border: 3px solid;
+}
+
+/* Nama pasangan */
+.nama-pasangan {
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* color: #d4af37; */
+  margin-top: -10px;
+  text-transform: capitalize;
+}
+
+/* Keluarga Container */
+.keluarga-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.keluarga {
   flex: 1 1 300px;
   background: #fff;
   border-radius: 16px;
@@ -85,20 +86,20 @@
   padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
-  }
-  
-  .keluarga h3 {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .keluarga p {
-    font-size: 0.9rem;
-    color: gray;
-  }
+}
 
-  /* Modal untuk Kirim Hadiah */
+.keluarga h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.keluarga p {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+/* Modal untuk Kirim Hadiah */
 .modal-content {
   border-radius: 16px;
   padding: 2rem;
@@ -114,6 +115,7 @@
   font-size: 1.2rem;
   color: #fff;
 }
+
 /* Modal Custom Ukuran */
 .modal-amplop-custom {
   max-width: 800px;
@@ -149,32 +151,32 @@
   font-size: 1rem;
   color: #333;
 }
-  
-  /* Tombol Kirim Hadiah */
-  .btn-container {
-    margin-top: 1.5rem;
-  }
-  
-  .btn-kirim {
-    background: #C38D7A;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .btn-kirim:hover {
-    background: white;
-    color: #C38D7A;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-.keluarga-container {
+
+/* Tombol Kirim Hadiah */
+.btn-container {
+  margin-top: 1.5rem;
+}
+
+.btn-kirim {
+  background: #C38D7A;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-kirim:hover {
+  background: white;
+  color: #C38D7A;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .keluarga-container {
     flex-direction: column;
     align-items: center;
   }
@@ -190,20 +192,35 @@
     max-width: 100%;
     padding: 1rem;
   }
-  
-    .keluarga {
-      width: 100%;
-    }
-  
-    .btn-kirim {
-      width: 100%;
-    }
-      .modal-content {
+
+  .keluarga {
+    width: 100%;
+  }
+
+  .btn-kirim {
+    width: 100%;
+  }
+
+  .modal-content {
     padding: 1rem !important;
   }
 
   .amplop-container {
     flex: 0 1 100%;
   }
+}
+
+@media (max-width: 480px) {
+  .card-amplop {
+    padding: 1rem;
+    margin-bottom: 1rem;
   }
-  
+
+  .card-amplop h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-amplop p {
+    font-size: 0.9rem;
+  }
+}

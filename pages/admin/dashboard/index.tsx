@@ -61,44 +61,49 @@ export default function AdminDashboard() {
 
   return (
     <AdminLayout>
-      <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
-      <p className="mt-2 text-gray-700 mb-8">
-        Selamat datang di Wedding Admin 🎉
-      </p>
+      <div className="p-6">
+        {/* Header */}
+        <h1 className="text-3xl font-bold mb-2 text-purple-800">📊 Dashboard</h1>
+        <p className="text-gray-600 mb-8">
+          Selamat datang di Wedding Admin 🎉 Berikut ringkasan data undangan & respon tamu.
+        </p>
 
-      {/* Card Statistik Undangan */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <div className="bg-white p-6 rounded-lg shadow text-center">
-          <h2 className="text-xl font-bold text-purple-700">Total Undangan</h2>
-          <p className="text-3xl font-extrabold mt-2">{totalUndangan}</p>
+        {/* Statistik Undangan */}
+        <h2 className="text-xl font-semibold text-gray-700 mb-4">Undangan</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="bg-white p-6 rounded-lg shadow text-center border-t-4 border-purple-600">
+            <h3 className="text-lg font-bold text-purple-700">Total Undangan</h3>
+            <p className="text-3xl font-extrabold mt-2">{totalUndangan}</p>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow text-center border-t-4 border-green-600">
+            <h3 className="text-lg font-bold text-green-700">Digital</h3>
+            <p className="text-3xl font-extrabold mt-2">{digitalCount}</p>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow text-center border-t-4 border-blue-600">
+            <h3 className="text-lg font-bold text-blue-700">Cetak</h3>
+            <p className="text-3xl font-extrabold mt-2">{cetakCount}</p>
+          </div>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow text-center">
-          <h2 className="text-xl font-bold text-green-700">Digital</h2>
-          <p className="text-3xl font-extrabold mt-2">{digitalCount}</p>
-        </div>
+        {/* Statistik Kehadiran */}
+        <h2 className="text-xl font-semibold text-gray-700 mb-4">Respon Kehadiran</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white p-6 rounded-lg shadow text-center border-t-4 border-gray-500">
+            <h3 className="text-lg font-bold text-gray-700">Total Respon</h3>
+            <p className="text-3xl font-extrabold mt-2">{totalRespon}</p>
+          </div>
 
-        <div className="bg-white p-6 rounded-lg shadow text-center">
-          <h2 className="text-xl font-bold text-blue-700">Cetak</h2>
-          <p className="text-3xl font-extrabold mt-2">{cetakCount}</p>
-        </div>
-      </div>
+          <div className="bg-white p-6 rounded-lg shadow text-center border-t-4 border-green-600">
+            <h3 className="text-lg font-bold text-green-700">Hadir</h3>
+            <p className="text-3xl font-extrabold mt-2">{hadirCount}</p>
+          </div>
 
-      {/* Card Statistik Kehadiran */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow text-center">
-          <h2 className="text-xl font-bold text-gray-700">Total Respon</h2>
-          <p className="text-3xl font-extrabold mt-2">{totalRespon}</p>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg shadow text-center">
-          <h2 className="text-xl font-bold text-green-700">Hadir</h2>
-          <p className="text-3xl font-extrabold mt-2">{hadirCount}</p>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg shadow text-center">
-          <h2 className="text-xl font-bold text-red-700">Tidak Hadir</h2>
-          <p className="text-3xl font-extrabold mt-2">{tidakHadirCount}</p>
+          <div className="bg-white p-6 rounded-lg shadow text-center border-t-4 border-red-600">
+            <h3 className="text-lg font-bold text-red-700">Tidak Hadir</h3>
+            <p className="text-3xl font-extrabold mt-2">{tidakHadirCount}</p>
+          </div>
         </div>
       </div>
     </AdminLayout>

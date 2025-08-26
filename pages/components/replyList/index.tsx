@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import BookDataService from "../../../services/book-services";
+import { Pagination } from "react-bootstrap";
 import toast from "react-hot-toast";
 
 type Reply = {
@@ -20,7 +21,11 @@ export default function ReplyList({
   const [replies, setReplies] = useState<Reply[]>([]);
   const [text, setText] = useState("");
   const [editId, setEditId] = useState<string | null>(null);
-  const [sender, setSender] = useState(""); // ⬅️ awal kosong
+  const [sender, setSender] = useState("");
+
+  // 🔥 pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
   useEffect(() => {
     if (!bookId) return;
@@ -31,21 +36,21 @@ export default function ReplyList({
           id: doc.id,
           ...doc.data(),
         }));
-        setReplies(list);
+        // urutkan biar konsisten
+        const sorted = list.sort(
+          (a, b) =>
+            (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0)
+        );
+        setReplies(sorted);
+        setCurrentPage(1); // reset ke page 1 setiap data berubah
       }
     );
     return () => unsubscribe();
   }, [bookId]);
 
   const handleAddReply = async () => {
-    if (!text) {
-      toast.error("Balasan tidak boleh kosong");
-      return;
-    }
-    if (!sender) {
-      toast.error("Pilih mempelai dulu (Trias atau Zulfa) ");
-      return;
-    }
+    if (!text) return toast.error("Balasan tidak boleh kosong");
+    if (!sender) return toast.error("Pilih mempelai dulu (Trias atau Zulfa)");
 
     try {
       if (editId) {
@@ -53,11 +58,15 @@ export default function ReplyList({
         toast.success("Balasan berhasil diupdate ✏️");
         setEditId(null);
       } else {
-        await BookDataService.addReply(bookId, { text, sender });
+        await BookDataService.addReply(bookId, {
+          text,
+          sender,
+          createdAt: new Date(),
+        });
         toast.success("Balasan berhasil ditambahkan ✅");
       }
       setText("");
-      setSender(""); // reset dropdown
+      setSender("");
     } catch (err) {
       toast.error("Terjadi kesalahan ❌");
       console.error(err);
@@ -78,15 +87,24 @@ export default function ReplyList({
   const handleEditReply = (reply: Reply) => {
     setEditId(reply.id);
     setText(reply.text);
-    setSender(reply.sender || ""); // ikutkan sender pas edit
+    setSender(reply.sender || "");
+  };
+
+  // 🔥 logic pagination
+  const totalPages = Math.ceil(replies.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentReplies = replies.slice(startIndex, startIndex + itemsPerPage);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   return (
     <div className="mt-3 p-3 border rounded bg-gray-50">
       {/* List Balasan */}
       <div className="space-y-2 mb-3">
-        {replies.length > 0 &&
-          replies.map((r) => (
+        {currentReplies.length > 0 ? (
+          currentReplies.map((r) => (
             <div
               key={r.id}
               className="p-2 bg-white border rounded text-sm text-gray-700 flex justify-between items-start"
@@ -115,20 +133,46 @@ export default function ReplyList({
                 </div>
               )}
             </div>
-          ))}
+          ))
+        ) : (
+          <p className="text-center text-gray-500">Belum ada balasan.</p>
+        )}
       </div>
+
+      {/* 🚀 Pagination Controls */}
+      {totalPages > 1 && (
+        <Pagination className="justify-content-center">
+          <Pagination.Prev
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          />
+          {[...Array(totalPages)].map((_, i) => (
+            <Pagination.Item
+              key={i + 1}
+              active={i + 1 === currentPage}
+              onClick={() => handlePageChange(i + 1)}
+            >
+              {i + 1}
+            </Pagination.Item>
+          ))}
+          <Pagination.Next
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          />
+        </Pagination>
+      )}
 
       {/* Form input hanya admin */}
       {isAdmin && (
-        <div className="flex gap-2">
+        <div className="flex gap-2 mt-3">
           <select
             value={sender}
             onChange={(e) => setSender(e.target.value)}
             className="border px-2 py-1 rounded"
           >
             <option value="">-- Pilih Mempelai --</option>
-            <option value="Trias ">Trias </option>
-            <option value="Zulfa ">Zulfa </option>
+            <option value="Trias">Trias</option>
+            <option value="Zulfa">Zulfa</option>
           </select>
 
           <input

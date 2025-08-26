@@ -11,7 +11,7 @@
 
 .card-bodys .btn-kirim-undangan {
   padding: 12px 24px;
-    border-radius: 10px;
+  border-radius: 10px;
   font-weight: bold;
   letter-spacing: 1px;
   margin-top: 10px;
@@ -30,7 +30,7 @@
 
 .ucapan h1 {
   font-size: 1.5rem;
-  
+
   color: #333;
 }
 
@@ -65,80 +65,107 @@
 
 /* Style untuk perangkat mobile */
 @media (max-width: 768px) {
-  .containerssa{
+  .containerssa {
     margin-top: -50px;
   }
+
   .card-bodys {
-    padding: 15px; /* Mengurangi padding untuk perangkat kecil */
+    padding: 15px;
+    /* Mengurangi padding untuk perangkat kecil */
   }
 
   .card-bodys .btn-kirim-undangan {
-    font-size: 13px; /* Menyesuaikan ukuran font tombol */
-    padding: 10px 20px; /* Mengurangi padding */
+    font-size: 13px;
+    /* Menyesuaikan ukuran font tombol */
+    padding: 10px 20px;
+    /* Mengurangi padding */
   }
 
   .btn-refresh-undangan {
-    font-size: 11px; /* Menyesuaikan ukuran font tombol */
-    padding: 8px 16px; /* Mengurangi padding */
+    font-size: 11px;
+    /* Menyesuaikan ukuran font tombol */
+    padding: 8px 16px;
+    /* Mengurangi padding */
   }
 
   .ucapan h1 {
-    font-size: 1.2rem; /* Menyesuaikan ukuran font heading */
+    font-size: 1.2rem;
+    /* Menyesuaikan ukuran font heading */
   }
 
   .ucapan h2 {
-    font-size: 0.85rem; /* Menyesuaikan ukuran font subheading */
+    font-size: 0.85rem;
+    /* Menyesuaikan ukuran font subheading */
   }
 
   .list-ucapan h5 {
-    font-size: 0.9rem; /* Menyesuaikan ukuran font judul ucapan */
+    font-size: 0.9rem;
+    /* Menyesuaikan ukuran font judul ucapan */
   }
 
   .list-ucapan p {
-    font-size: 0.8rem; /* Menyesuaikan ukuran font teks ucapan */
+    font-size: 0.8rem;
+    /* Menyesuaikan ukuran font teks ucapan */
   }
 
   .list-ucapan {
-    padding: 10px; /* Mengurangi padding untuk perangkat kecil */
+    padding: 10px;
+    /* Mengurangi padding untuk perangkat kecil */
   }
 }
 
 /* Style untuk perangkat kecil (misalnya, ponsel dengan lebar kurang dari 480px) */
 @media (max-width: 480px) {
-  .containerssa{
+  .containerssa {
     margin-top: -20px;
   }
+
   .card-bodys {
-    padding: 10px; /* Menyesuaikan padding lebih kecil */
+    padding: 1rem;
+    font-size: 1rem;
   }
 
   .card-bodys .btn-kirim-undangan {
-    font-size: 12px; /* Menyesuaikan ukuran font tombol */
-    padding: 8px 16px; /* Mengurangi padding */
+    font-size: 12px;
+    /* Menyesuaikan ukuran font tombol */
+    padding: 8px 16px;
+    /* Mengurangi padding */
   }
 
   .btn-refresh-undangan {
-    font-size: 10px; /* Menyesuaikan ukuran font tombol */
-    padding: 6px 12px; /* Mengurangi padding */
+    font-size: 10px;
+    /* Menyesuaikan ukuran font tombol */
+    padding: 6px 12px;
+    /* Mengurangi padding */
   }
 
   .ucapan h1 {
-    font-size: 1rem; /* Menyesuaikan ukuran font heading */
+    font-size: 1rem;
+    /* Menyesuaikan ukuran font heading */
   }
 
   .ucapan h2 {
-    font-size: 0.75rem; /* Menyesuaikan ukuran font subheading */
+    font-size: 0.75rem;
+    /* Menyesuaikan ukuran font subheading */
   }
 
   .list-ucapan h5 {
-    font-size: 0.85rem; /* Menyesuaikan ukuran font judul ucapan */
+    font-size: 0.85rem;
+    /* Menyesuaikan ukuran font judul ucapan */
   }
 
   .list-ucapan p {
-    font-size: 0.75rem; /* Menyesuaikan ukuran font teks ucapan */
+    font-size: 0.75rem;
+    /* Menyesuaikan ukuran font teks ucapan */
   }
 
   .list-ucapan {
-    padding: 8px; /* Mengurangi padding untuk perangkat kecil */
+    padding: 8px;
+    /* Mengurangi padding untuk perangkat kecil */
+  }
+
+  .card-bodys input,
+  .card-bodys textarea {
+    font-size: 0.9rem;
   }
 }

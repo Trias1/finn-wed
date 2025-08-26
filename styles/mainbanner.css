@@ -25,10 +25,15 @@ html {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  padding: 3rem 2rem;
-  margin-bottom: 2rem;
+  padding: 2rem;
+  margin: 0 auto 2rem auto;
+  /* ✅ center + ada jarak bawah */
+  max-width: 900px;
+  /* ✅ samakan lebar semua card */
+  width: 100%;
   text-align: center;
 }
+
 
 .pre-title {
   font-size: 1.8rem;
@@ -73,15 +78,20 @@ html {
 .time-secs {
   background: #c38d7a;
   color: white;
-  padding: 1rem 1.5rem;
+  width: 120px;
+  /* ✅ lebar fix */
+  height: 100px;
+  /* ✅ tinggi fix */
+  display: flex;
+  /* ✅ flex biar konten center */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 12px;
-  min-width: 100px;
   text-align: center;
 }
 
-
 .time-number {
-  display: block;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.25rem;
@@ -91,21 +101,48 @@ html {
 @media screen and (max-width: 768px) {
   #clock {
     display: grid;
-    /* ✅ ganti jadi grid */
     grid-template-columns: repeat(2, 1fr);
-    /* ✅ bikin 2 kolom */
     gap: 1rem;
     justify-items: center;
-    /* biar itemnya center */
+  }
+
+  .card-main,
+  .calon-cards {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
   }
 
   .time-secs {
-    min-width: 120px;
-    /* biar pas di grid */
-    padding: 1rem;
+    width: 100px;
+    /* lebih kecil biar muat di HP */
+    height: 80px;
   }
 
   .time-number {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .titles {
+    font-size: 1.8rem;
+    /* kecilin judul */
+  }
+
+  .pre-title {
+    font-size: 1.2rem;
+  }
+
+  .text-invite {
+    font-size: 1rem;
+  }
+
+  .time-secs {
+    width: 80px;
+    height: 70px;
+  }
+
+  .time-number {
+    font-size: 1.2rem;
   }
 }

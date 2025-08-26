@@ -50,14 +50,7 @@ export default function Amplop() {
       rekening: "9876543210",
       bank: "Mandiri",
       atasNama: "Trias & Zulfa",
-    },
-    {
-      image: "/img/qris.png",
-      alt: "QRIS Pembayaran",
-      rekening: "1122334455",
-      bank: "BRI",
-      atasNama: "Trias & Zulfa",
-    },
+    }
   ];
 
   return (
