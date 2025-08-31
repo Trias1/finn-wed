@@ -17,12 +17,14 @@ export default function MainBanner() {
 
       if (distance < 0) {
         clearInterval(x);
-        setIsExpired(true);
+        setIsExpired(true); // 👉 kalau sudah lewat, tandai expired
         return;
       }
 
       setDays(Math.floor(distance / (1000 * 60 * 60 * 24)));
-      setHours(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+      setHours(
+        Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      );
       setMinutes(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
       setSeconds(Math.floor((distance % (1000 * 60)) / 1000));
     }, 1000);
@@ -53,7 +55,14 @@ export default function MainBanner() {
 
           <div className="remaining-time mt-4">
             {isExpired ? (
-              <div>🎉 Yay... The day has arrived!</div>
+              <div className="text-center font-semibold text-green-600 mt-4">
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed">
+                  🎉 Alhamdulillah, hari yang ditunggu telah tiba!
+                </p>
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed">
+                  Mohon doa & restunya 🙏
+                </p>
+              </div>
             ) : (
               <div id="clock" className="flex gap-6 justify-center">
                 <div className="time-secs">

@@ -113,10 +113,47 @@ export default function ListUndangan() {
     }
   };
 
+  // 📲 Generate teks undangan
+  const generateTeks = (name: string, slug: string) => {
+    const link = `https://trias-zulfa-wedding.vercel.app/trias-zulfa/undangan/${slug}`;
+
+    return `Kepada Yth. Bapak/Ibu/Saudara/i ${name}
+Di Tempat
+
+Bismillahirrahmanirrahim
+
+*UNDANGAN WALIMATUL 'URS*
+
+Assalamualaikum Warahmatullah Wabarakatuh
+
+Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i sekalian yang dirahmati Allah untuk menghadiri acara pernikahan kami:
+
+*Trias Zaen Mutaqin & Zulfa Syafiyah Pratiwi*
+
+📅 Hari/Tanggal: Ahad, 28 September 2025
+⏰ Waktu: Pukul 11.00 WIB – selesai
+📍 Tempat: Graha Umbaran
+Jl. Pangeran Cakrabuana No.102, Sendang, Kec. Sumber, Kabupaten Cirebon, Jawa Barat 45611
+
+🔗 Berikut link undangan kami:
+${link}
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa dan restu kepada kedua mempelai.
+
+🙏 Doa keberkahan bagi pengantin pria dan wanita:
+
+بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+
+“Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah, serta semoga Allah mempersatukan kalian berdua dalam kebaikan.” (HR. Abu Dawud no. 2130)
+
+Jazakumullahu khairan katsiran
+
+Wassalamualaikum Warahmatullahi Wabarakaatuh`;
+  };
+
   // 📲 Share WA
   const handleShareWA = (t: any) => {
-    const link = `https://trias-zulfa-wedding.vercel.app/trias-zulfa/undangan/${t.slug}`;
-    const pesan = `Assalamualaikum,\n\nKami mengundang ${t.nama} untuk hadir di acara pernikahan kami.\n\n📎 Link undangan: ${link}`;
+    const pesan = generateTeks(t.nama, t.slug);
     const waUrl = `https://wa.me/?text=${encodeURIComponent(pesan)}`;
     window.open(waUrl, "_blank");
   };
@@ -133,7 +170,7 @@ export default function ListUndangan() {
     return matchSearch && matchKategori && matchStatus;
   });
 
-  // 📌 urutkan sesuai abjad (ignore huruf besar/kecil)
+  // 📌 urutkan sesuai abjad
   const sortedTamu = [...filteredTamu].sort((a, b) =>
     a.nama.localeCompare(b.nama, "id", { sensitivity: "base" })
   );
@@ -155,7 +192,6 @@ export default function ListUndangan() {
           >
             <FaPlus /> Tambah
           </button>
-          {/* ⬅️ tombol import */}
           <ImportExcel />
         </div>
       </div>
