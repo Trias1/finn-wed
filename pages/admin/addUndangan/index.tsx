@@ -114,42 +114,44 @@ export default function ListUndangan() {
   };
 
   // 📲 Generate teks undangan
-  const generateTeks = (name: string, slug: string) => {
-    const link = `https://trias-zulfa-wedding.vercel.app/trias-zulfa/undangan/${slug}`;
+// 📲 Generate teks undangan (versi aman WA)
+const generateTeks = (name: string, slug: string) => {
+  const link = `https://trias-zulfa-wedding.vercel.app/trias-zulfa/undangan/${slug}`;
 
-    return `Kepada Yth. Bapak/Ibu/Saudara/i ${name}
+  return `Kepada Yth. Bapak/Ibu/Saudara/i ${name}
 Di Tempat
 
 Bismillahirrahmanirrahim
 
 *UNDANGAN WALIMATUL 'URS*
 
-Assalamualaikum Warahmatullah Wabarakatuh
+Assalamualaikum Warahmatullahi Wabarakatuh
 
-Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i sekalian yang dirahmati Allah untuk menghadiri acara pernikahan kami:
+Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i sekalian untuk menghadiri acara pernikahan kami:
 
 *Trias Zaen Mutaqin & Zulfa Syafiyah Pratiwi*
 
-📅 Hari/Tanggal: Ahad, 28 September 2025
-⏰ Waktu: Pukul 11.00 WIB – selesai
-📍 Tempat: Graha Umbaran
-Jl. Pangeran Cakrabuana No.102, Sendang, Kec. Sumber, Kabupaten Cirebon, Jawa Barat 45611
+Hari/Tanggal : Ahad, 28 September 2025
+Waktu        : 11.00 WIB – selesai
+Tempat       : Graha Umbaran
+Jl. Pangeran Cakrabuana No.102, Sendang, Kec. Sumber, Kabupaten Cirebon
 
-🔗 Berikut link undangan kami:
+Link undangan kami:
 ${link}
 
-Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa dan restu kepada kedua mempelai.
+Merupakan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa dan restu.
 
-🙏 Doa keberkahan bagi pengantin pria dan wanita:
+Doa keberkahan:
+Barakallahu laka wa baraka ‘alaika wa jama‘a bainakuma fii khair
 
-بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
-
-“Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah, serta semoga Allah mempersatukan kalian berdua dalam kebaikan.” (HR. Abu Dawud no. 2130)
+"Semoga Allah memberkahimu di waktu bahagia maupun susah, serta mempersatukan kalian berdua dalam kebaikan." (HR. Abu Dawud no. 2130)
 
 Jazakumullahu khairan katsiran
 
-Wassalamualaikum Warahmatullahi Wabarakaatuh`;
-  };
+Wassalamualaikum Warahmatullahi Wabarakatuh`;
+};
+
+
 
   // 📲 Share WA
   const handleShareWA = (t: any) => {

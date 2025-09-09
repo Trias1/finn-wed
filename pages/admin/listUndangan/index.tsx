@@ -44,9 +44,9 @@ Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i sekalian yang dirahmati Allah
 
 Trias Zaen Mutaqin & Zulfa Syafiyah Pratiwi
 
-🗓️ Hari/Tanggal: Ahad, 28 September 2025
-🕐 Waktu: Pukul 11.00 WIB – selesai
-📍 Tempat: Graha Umbaran
+Hari/Tanggal: Ahad, 28 September 2025
+Waktu: Pukul 11.00 WIB – selesai
+Tempat: Graha Umbaran
  Jl. Pangeran Cakrabuana No.102, Sendang, Kec. Sumber, Kabupaten Cirebon, Jawa Barat 45611
 
 📎 Berikut link undangan kami:
@@ -54,7 +54,7 @@ ${link}
 
 Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa dan restu kepada kedua mempelai.
 
-🤲🏻 Doa keberkahan bagi pengantin pria dan wanita:
+Doa keberkahan bagi pengantin pria dan wanita:
 
 بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
 
