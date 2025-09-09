@@ -37,7 +37,7 @@ export default function CalonPasangan() {
           </div>
 
           <div className="icon-cincin">
-            <p className="nama-pasangan">Trias 💍 Zulfa</p>
+            <p className="nama-pasangan">Zulfa 💍 Trias</p>
           </div>
 
           <div className="pengantin">
