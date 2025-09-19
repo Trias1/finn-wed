@@ -57,7 +57,7 @@ export default function Amplop() {
       qris: "",
       bankLogo: "/img/bca.png",
       rekening: "7275226858",
-      atasNama: "Trias Zaen Mutaqi",
+      atasNama: "Trias Zaen Mutaqin",
     },
   ];
 
