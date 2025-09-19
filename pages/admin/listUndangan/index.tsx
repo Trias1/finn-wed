@@ -5,6 +5,7 @@ import TamuService from "../../../services/tamu-services";
 import slugify from "slugify";
 import { exportAllUndanganToWord } from "../../../utils/exportWord";
 import AdminLayout from "../../components/admin/sidebar/AdminLayout";
+import toast from "react-hot-toast";
 
 export default function ShareUndangan() {
   const [tamu, setTamu] = useState<any[]>([]);
@@ -93,7 +94,8 @@ Wassalamualaikum Warahmatullahi Wabarakaatuh`;
   const handleCopy = () => {
     if (!output) return;
     navigator.clipboard.writeText(output);
-    alert("Teks undangan sudah dicopy ke clipboard!");
+    toast.success("Teks undangan berhasil disalin ke clipboard!"
+    );
   };
 
   const handleShareWA = () => {
