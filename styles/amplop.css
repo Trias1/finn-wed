@@ -36,7 +36,7 @@
   object-fit: cover;
 }
 
-/* Teks Undangan */
+/* 🔹 Teks Undangan */
 .text-undangan {
   margin-bottom: 1.5rem;
 }
@@ -51,26 +51,15 @@
   margin-top: 0.5rem;
 }
 
-/* Foto Pasangan */
-.foto-pasangan {
-  margin-bottom: 1rem;
-}
-
-.pasangan-img {
-  border-radius: 50%;
-  border: 3px solid;
-}
-
-/* Nama pasangan */
+/* 🔹 Nama Pasangan */
 .nama-pasangan {
   font-size: 1.5rem;
   font-weight: bold;
-  /* color: #d4af37; */
   margin-top: -10px;
   text-transform: capitalize;
 }
 
-/* Keluarga Container */
+/* 🔹 Keluarga Container */
 .keluarga-container {
   display: flex;
   justify-content: center;
@@ -99,60 +88,92 @@
   color: gray;
 }
 
-/* Modal untuk Kirim Hadiah */
+/* 🔹 Modal untuk Kirim Hadiah */
 .modal-content {
   border-radius: 16px;
   padding: 2rem;
 }
 
-.modal-body p {
-  font-size: 1rem;
-  color: #fff
-}
-
 .modal-title {
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.6rem;
+  font-weight: 600;
   color: #fff;
 }
 
-/* Modal Custom Ukuran */
 .modal-amplop-custom {
   max-width: 800px;
   width: 95%;
   margin: auto;
 }
 
-/* Grid dalam modal */
-.amplop-grid {
+/* 🔹 Isi Modal */
+.modal-body {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
 }
 
-/* Item amplop */
-.amplop-container {
-  flex: 0 1 220px;
-  background-color: #f9f9f9;
+/* 🔹 Blok rekening */
+.rekening-block {
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  background: #fff;
   border-radius: 12px;
   padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 10px #C38D7A;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.amplop-container img {
-  max-width: 100%;
+.qr-code {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 100%;
+  max-width: 160px;
   height: auto;
-  margin-bottom: 0.5rem;
+  object-fit: contain;
 }
 
-.amplop-container p {
+.bank-logo {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
+.rekening {
   font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0;
   color: #333;
 }
 
-/* Tombol Kirim Hadiah */
+.atas-nama {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.btn-copy {
+  background: #4b2c20;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-copy:hover {
+  background: #fff;
+  color: #4b2c20;
+  border: 1px solid #4b2c20;
+}
+
+/* 🔹 Tombol Kirim Hadiah */
 .btn-container {
   margin-top: 1.5rem;
 }
@@ -174,7 +195,7 @@
   color: #C38D7A;
 }
 
-/* Responsive */
+/* 🔹 Responsive */
 @media (max-width: 768px) {
   .keluarga-container {
     flex-direction: column;
@@ -187,16 +208,6 @@
     padding: 1.5rem;
   }
 
-  .amplop-container {
-    flex: 1 1 100%;
-    max-width: 100%;
-    padding: 1rem;
-  }
-
-  .keluarga {
-    width: 100%;
-  }
-
   .btn-kirim {
     width: 100%;
   }
@@ -205,8 +216,12 @@
     padding: 1rem !important;
   }
 
-  .amplop-container {
+  .rekening-block {
     flex: 0 1 100%;
+  }
+
+  .qr-code {
+    max-width: 140px;
   }
 }
 
@@ -222,5 +237,13 @@
 
   .card-amplop p {
     font-size: 0.9rem;
+  }
+
+  .qr-code {
+    max-width: 120px;
+  }
+
+  .btn-copy {
+    width: 100%;
   }
 }

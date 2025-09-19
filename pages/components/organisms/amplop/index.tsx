@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Script from "next/script";
+import toast from "react-hot-toast";
 
 export default function Amplop() {
   const modalRef = useRef<HTMLDivElement>(null);
-  const scrollYRef = useRef<number>(0); // simpan posisi scroll
+  const scrollYRef = useRef<number>(0);
 
   const openModal = () => {
     if (typeof window !== "undefined") {
@@ -26,7 +27,7 @@ export default function Amplop() {
     const handleHidden = () => {
       window.scrollTo({
         top: scrollYRef.current,
-        behavior: "smooth", // atau "smooth" kalau mau animasi
+        behavior: "smooth",
       });
     };
 
@@ -36,21 +37,28 @@ export default function Amplop() {
     };
   }, []);
 
+  const copyRekening = (rekening: string) => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(rekening).then(
+        () => toast.success("Nomor rekening berhasil disalin!"),
+        () => toast.error("Gagal menyalin, coba manual.")
+      );
+    }
+  };
+
   const amplop = [
     {
-      image: "/img/qris.png",
-      alt: "QRIS Pembayaran",
-      rekening: "7275226858",
-      bank: "BCA",
-      atasNama: "Trias Zaen Mutaqin",
+      qris: "",
+      bankLogo: "/img/blue-bca.png",
+      rekening: "006454754307",
+      atasNama: "Zulfa Syafiyah Pratiwi",
     },
     {
-      image: "/img/qrisss.png",
-      alt: "QRIS Pembayaran",
-      rekening: "1758157269315113",
-      bank: "Blu BCA",
-      atasNama: "Zulfa Syafiyah Pratiwi",
-    }
+      qris: "",
+      bankLogo: "/img/bca.png",
+      rekening: "7275226858",
+      atasNama: "Trias Zaen Mutaqi",
+    },
   ];
 
   return (
@@ -126,18 +134,34 @@ export default function Amplop() {
                 aria-label="Close"
               ></button>
             </div>
+
             <div className="modal-body amplop-grid">
               {amplop.map((item, index) => (
-                <div key={index} className="amplop-container">
+                <div key={index} className="rekening-block">
+                  {item.qris && (
+                    <Image
+                      src={item.qris}
+                      alt="QRIS"
+                      width={160}
+                      height={160}
+                      className="qr-code"
+                    />
+                  )}
                   <Image
-                    src={item.image}
-                    alt={item.alt}
-                    width={200}
-                    height={200}
+                    src={item.bankLogo}
+                    alt="Bank Logo"
+                    width={120}
+                    height={50}
+                    className="bank-logo"
                   />
-                  <p className="mt-3 mb-0 fw-bold">Rekening {item.bank}</p>
-                  <p>{item.rekening}</p>
-                  <p> {item.atasNama}</p>
+                  <p className="rekening">{item.rekening}</p>
+                  <p className="atas-nama">{item.atasNama}</p>
+                  <button
+                    className="btn-copy"
+                    onClick={() => copyRekening(item.rekening)}
+                  >
+                    Copy
+                  </button>
                 </div>
               ))}
             </div>
