@@ -15,7 +15,7 @@ export default function WeedingLocation() {
             </p>
 
             <div className="save-the-date">
-              <span className="day">Minggu</span>
+              <span className="day">Ahad</span>
               <div className="date-container">
                 <span className="date">28</span>
                 <hr className="date-line" />
