@@ -37,7 +37,7 @@ export default function CalonPasangan() {
           </div>
 
           <div className="icon-cincin">
-            <p className="nama-pasangan">Trias 💍 Zulfa</p>
+            <p className="nama-pasangan">Zulfa 💍 Trias</p>
           </div>
 
           <div className="pengantin">
@@ -51,7 +51,7 @@ export default function CalonPasangan() {
             />
             <p className="nama-pengantin">Trias Zaen Mutaqin</p>
             <p className="orangtua">Putra dari Pak Asep Sudrajat & Ibu Upi</p>
-            <a href="https://www.instagram.com/tzm_12/" className="sosmed">
+            <a href="https://www.instagram.com/tzm_1112/" className="sosmed">
               <FiInstagram />
             </a>
           </div>
