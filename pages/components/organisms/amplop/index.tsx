@@ -48,7 +48,7 @@ export default function Amplop() {
       image: "/img/qrisss.png",
       alt: "QRIS Pembayaran",
       rekening: "1758157269315113",
-      bank: "BCA Digital",
+      bank: "Blu BCA",
       atasNama: "Zulfa Syafiyah Pratiwi",
     }
   ];
