@@ -43,6 +43,13 @@ export default function Amplop() {
       rekening: "7275226858",
       bank: "BCA",
       atasNama: "Trias Zaen Mutaqin",
+    },
+    {
+      image: "/img/qrisss.png",
+      alt: "QRIS Pembayaran",
+      rekening: "1758157269315113",
+      bank: "BCA Digital",
+      atasNama: "Zulfa Syafiyah Pratiwi",
     }
   ];
 
