@@ -9,7 +9,7 @@ export default function MainBanner() {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const countDownDate = new Date("September 28, 2025 11:00:00").getTime();
+    const countDownDate = new Date("September 28, 2025 08:00:00").getTime();
 
     const x = setInterval(() => {
       const now = new Date().getTime();
