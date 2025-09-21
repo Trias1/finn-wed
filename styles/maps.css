@@ -1,12 +1,21 @@
 /* Membuat peta lebih responsif */
 .map-responsive {
   position: relative;
-  padding-bottom: 56.25%;
-  /* Membuat peta dengan rasio 16:9 */
+  padding-bottom: 56.25%; /* Aspect ratio 16:9 */
   height: 0;
   overflow: hidden;
   max-width: 100%;
   background: transparent;
+  border-radius: 10px;
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
   border-radius: 10px;
 }
 
@@ -23,16 +32,16 @@
 /* Responsif untuk layar lebih kecil dari 991px */
 @media (max-width: 991px) {
   .map-responsive {
-    margin-top: -4rem;
+    padding-bottom: 70%; /* lebih tinggi biar enak di tablet */
   }
 }
 
 /* Responsif untuk layar lebih kecil dari 480px (layar ponsel) */
 @media (max-width: 480px) {
   .map-responsive {
+    padding-bottom: 100%; /* lebih tinggi biar jelas */
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    height: 100px;
   }
 
   .card-maps {

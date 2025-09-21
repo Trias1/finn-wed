@@ -5,10 +5,13 @@ import {
   onSnapshot,
   QuerySnapshot,
   DocumentData,
+  deleteDoc,
+  doc,
 } from "firebase/firestore";
 import AdminLayout from "../../components/admin/sidebar/AdminLayout";
 import { db } from "../../../services/firebase-config";
 import { Pagination } from "react-bootstrap";
+import toast from "react-hot-toast";
 
 type Book = {
   id: string;
@@ -30,7 +33,6 @@ export default function KelolaUcapan() {
         id: doc.id,
         ...(doc.data() as Omit<Book, "id">),
       }));
-      // urutkan terbaru dulu
       list.sort(
         (a, b) =>
           (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0)
@@ -52,6 +54,18 @@ export default function KelolaUcapan() {
       hour: "2-digit",
       minute: "2-digit",
     });
+  };
+
+  const handleDelete = async (id: string, nama: string) => {
+    if (confirm(`Yakin mau hapus ucapan dari "${nama}"?`)) {
+      try {
+        await deleteDoc(doc(db, "wedd", id));
+        toast.success(`Ucapan dari "${nama}" berhasil dihapus ✅`);
+      } catch (error) {
+        console.error("Gagal hapus ucapan:", error);
+        toast.error("❌ Gagal hapus ucapan, coba lagi.");
+      }
+    }
   };
 
   const totalPages = Math.ceil(ucapan.length / itemsPerPage);
@@ -101,6 +115,14 @@ export default function KelolaUcapan() {
                   <p className="text-xs text-gray-500 mt-2">
                     🕒 {formatDate(u.createdAt)}
                   </p>
+
+                  {/* Tombol Hapus */}
+                  <button
+                    onClick={() => handleDelete(u.id, u.title)}
+                    className="mt-3 px-3 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition"
+                  >
+                    Hapus
+                  </button>
                 </div>
               ))}
             </div>

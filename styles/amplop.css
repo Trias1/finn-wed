@@ -109,10 +109,10 @@
 
 /* 🔹 Isi Modal */
 .modal-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
+  justify-items: center;
 }
 
 /* 🔹 Blok rekening */
@@ -241,6 +241,15 @@
 
   .qr-code {
     max-width: 120px;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr; /* jadi 1 kolom */
+  }
+
+  .rekening-block {
+    width: 100%;
+    max-width: none;
   }
 
   .btn-copy {
