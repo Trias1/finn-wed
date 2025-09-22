@@ -27,8 +27,8 @@ export default function Document() {
 
         {/* Favicon & Meta */}
         <link rel="icon" href="/img/bck.png" />
-        <meta name="description" content="Weeding Trias & Zulfa" />
-        <title>The Weeding of Trias & Zulfa</title>
+        <meta name="description" content="Wedding Trias & Zulfa" />
+        <title>The Wedding of Trias & Zulfa</title>
       </Head>
       <body>
         <Main />
