@@ -32,7 +32,7 @@ const LoveStory = () => {
       <div className="containers" id="lovestory">
         <div className="calon-cardss">
           <div className="love-story-container">
-            <h1 className="section-title">Love Story</h1>
+            <h1 className="section-title">kisah cinta</h1>
             <div className="timeline">
               {moments.map((moment, index) => (
                 <div className="timeline-item" key={index}>

@@ -41,10 +41,10 @@ export default function MainBanner() {
             alt="Wedding Image"
             className="banner-image"
           />
-          <h3 className="pre-title">The Wedding of</h3>
+          <h3 className="pre-title">Pernikahan</h3>
           <h1 className="titles">Zulfa & Trias</h1>
           <h4 className="text-invite">
-            We invite you to celebrate our wedding
+          Kami mengundang Anda untuk merayakan pernikahan kami
             <br />
             <span className="mt-1">Ahad, 28 September 2025</span>
           </h4>
@@ -67,19 +67,19 @@ export default function MainBanner() {
               <div id="clock" className="flex gap-6 justify-center">
                 <div className="time-secs">
                   <span className="time-number">{days}</span>
-                  <div>Days</div>
+                  <div>Hari</div>
                 </div>
                 <div className="time-secs">
                   <span className="time-number">{hours}</span>
-                  <div>Hours</div>
+                  <div>Jam</div>
                 </div>
                 <div className="time-secs">
                   <span className="time-number">{minutes}</span>
-                  <div>Minutes</div>
+                  <div>Menit</div>
                 </div>
                 <div className="time-secs">
                   <span className="time-number">{seconds}</span>
-                  <div>Seconds</div>
+                  <div>Detik</div>
                 </div>
               </div>
             )}

@@ -7,7 +7,7 @@ export default function WeedingLocation() {
     <div id="weddingDate">
       <div className="containers mt-4">
         <div className="card">
-          <h2 className="section-titles">Save The Date</h2>
+          <h2 className="section-titles">Simpan Tanggal</h2>
 
           <div className="card-body">
             <p className="card-subtitle">
